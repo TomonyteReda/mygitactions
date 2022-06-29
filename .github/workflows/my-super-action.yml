@@ -1,0 +1,41 @@
+name: My First GitHub Action
+
+on:
+  push:
+    branches: [ main ]
+  pull request:
+    branches: [ main ]
+   
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run greetings script
+        run: echo Hello, world!
+        
+      - name: Run multi-line info script
+        run:
+          echo 1. What's in the directory?
+          ls -a
+          echo
+          echo 2. Is python installed?
+          python -version
+          echo
+          echo 3. Is Git installed?
+          git --version
+          echo 4. What build tools are installed?
+          mvn --version
+          gradle --version
+          ant -version
+          echo 5. What is workspace location?
+          echo $RUNNER_WORKSPACE
+          echo
+          echo 6. Who is running the script?
+          whoami
+          echo 7. How is the disc laid out?
+          df
+          echo 8. What environment variables are available?
+          env
+          
+  
