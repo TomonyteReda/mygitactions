@@ -15,7 +15,7 @@ jobs:
         run: echo Hello, world!
         
       - name: Run multi-line info script
-        run:
+        run: |
           echo 1. What is in the directory?
           ls -a
           echo
