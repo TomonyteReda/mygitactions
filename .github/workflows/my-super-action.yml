@@ -21,7 +21,7 @@ jobs:
           ls -a
           echo
           echo 2. Is python installed?
-          python -version
+          python --version
           echo
           echo 3. Is Git installed?
           git --version
